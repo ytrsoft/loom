@@ -1,0 +1,71 @@
+{
+  "extends": "./node_modules/gts/",
+  "root": true,
+  "ignorePatterns": [
+    "dist/",
+    "node_modules/",
+    ".loom/"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "crawlee",
+            "message": "Crawlee is an implementation detail of @loom/core. Use the Loom API instead."
+          }
+        ]
+      }
+    ],
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "packages/core/src/runtime/*.ts"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    },
+    {
+      "files": [
+        "packages/dashboard/**/*.ts",
+        "packages/dashboard/**/*.tsx"
+      ],
+      "env": {
+        "browser": true
+      }
+    },
+    {
+      "files": [
+        "packages/dashboard/src/components/ui/**/*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ],
+  "settings": {
+    "n": {
+      "version": ">=20.12.0"
+    }
+  }
+}

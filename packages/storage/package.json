@@ -1,0 +1,52 @@
+{
+  "name": "@loom/storage",
+  "version": "0.1.0",
+  "description": "Loom storage: automatic, evolving tables on any SQL database via Drizzle ORM.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit --composite false",
+    "test": "node --import tsx --test \"test/**/*_test.ts\""
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.38.3"
+  },
+  "peerDependencies": {
+    "@libsql/client": ">=0.14.0",
+    "better-sqlite3": ">=11.7.0",
+    "mysql2": "^3.11.5",
+    "pg": "^8.13.1"
+  },
+  "peerDependenciesMeta": {
+    "@libsql/client": {
+      "optional": true
+    },
+    "better-sqlite3": {
+      "optional": true
+    },
+    "mysql2": {
+      "optional": true
+    },
+    "pg": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@libsql/client": "^0.17.3",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/pg": "^8.11.10",
+    "mysql2": "^3.11.5",
+    "pg": "^8.13.1"
+  }
+}

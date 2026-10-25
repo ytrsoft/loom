@@ -1,0 +1,31 @@
+{
+  "name": "loom-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "lint": "gts lint",
+    "fix": "gts fix",
+    "example": "pnpm --filter @loom/example-hacker-news dev"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "gts": "^5.3.1",
+    "tsx": "^4.19.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
+  }
+}

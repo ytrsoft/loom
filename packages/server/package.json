@@ -1,0 +1,31 @@
+{
+  "name": "@loom/server",
+  "version": "0.1.0",
+  "description": "Loom server: REST API, WebSocket event stream and dashboard hosting.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit --composite false"
+  },
+  "dependencies": {
+    "@loom/dashboard": "workspace:*",
+    "express": "^5.0.1",
+    "loom": "workspace:*",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.13"
+  }
+}

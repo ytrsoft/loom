@@ -1,0 +1,43 @@
+{
+  "name": "@loom/core",
+  "version": "0.1.0",
+  "description": "Loom core: extraction DSL, spiders, composables and the crawling engine.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit --composite false",
+    "test": "node --import tsx --test \"test/**/*_test.ts\""
+  },
+  "dependencies": {
+    "@crawlee/memory-storage": "^3.13.0",
+    "cheerio": "^1.0.0",
+    "crawlee": "^3.13.0",
+    "domhandler": "^5.0.3"
+  },
+  "peerDependencies": {
+    "playwright": "^1.49.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "loom",
+  "version": "0.1.0",
+  "description": "Loom: a convention-over-configuration crawling framework (TypeScript, Crawlee, Drizzle).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit --composite false"
+  },
+  "dependencies": {
+    "@loom/core": "workspace:*",
+    "@loom/storage": "workspace:*",
+    "croner": "^9.0.0"
+  }
+}

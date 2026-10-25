@@ -1,0 +1,30 @@
+{
+  "name": "@loom/cli",
+  "version": "0.1.0",
+  "description": "The loom command: dev server, runs, scaffolding and exports.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "loom": "./bin/loom.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit --composite false"
+  },
+  "dependencies": {
+    "@loom/server": "workspace:*",
+    "loom": "workspace:*",
+    "tsx": "^4.19.2"
+  }
+}
